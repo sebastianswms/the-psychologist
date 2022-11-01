@@ -2,6 +2,8 @@ package psychologistmod;
 
 import basemod.BaseMod;
 import basemod.interfaces.*;
+import com.badlogic.gdx.graphics.Color;
+import psychologistmod.characters.ThePsychologist;
 import psychologistmod.util.GeneralUtils;
 import psychologistmod.util.KeywordInfo;
 import psychologistmod.util.TextureLoader;
@@ -27,6 +29,7 @@ import java.util.Set;
 
 @SpireInitializer
 public class ThePsychologistMod implements
+        EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber {
@@ -35,6 +38,18 @@ public class ThePsychologistMod implements
     static { loadModInfo(); }
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
     private static final String resourcesFolder = "psychologistmod";
+    private static final String BG_ATTACK = characterPath("cardback/bg_attack.png");
+    private static final String BG_ATTACK_P = characterPath("cardback/bg_attack_p.png");
+    private static final String BG_SKILL = characterPath("cardback/bg_skill.png");
+    private static final String BG_SKILL_P = characterPath("cardback/bg_skill_p.png");
+    private static final String BG_POWER = characterPath("cardback/bg_power.png");
+    private static final String BG_POWER_P = characterPath("cardback/bg_power_p.png");
+    private static final String ENERGY_ORB = characterPath("cardback/energy_orb.png");
+    private static final String ENERGY_ORB_P = characterPath("cardback/energy_orb_p.png");
+    private static final String SMALL_ORB = characterPath("cardback/small_orb.png");
+    private static final Color cardColor = new Color(74f/255f, 14f/255f, 37f/255f, 1f);
+    private static final String CHAR_SELECT_BUTTON = characterPath("select/button.png");
+    private static final String CHAR_SELECT_PORTRAIT = characterPath("select/portrait.png");
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
@@ -45,6 +60,12 @@ public class ThePsychologistMod implements
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
         new ThePsychologistMod();
+
+        BaseMod.addColor(ThePsychologist.Enums.CARD_COLOR, cardColor,
+                BG_ATTACK, BG_SKILL, BG_POWER, ENERGY_ORB,
+                BG_ATTACK_P, BG_SKILL_P, BG_POWER_P, ENERGY_ORB_P,
+                SMALL_ORB);
+
     }
 
     public ThePsychologistMod() {
@@ -175,5 +196,11 @@ public class ThePsychologistMod implements
         else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
+    }
+
+    @Override
+    public void receiveEditCharacters() {
+        BaseMod.addCharacter(new ThePsychologist(),
+                CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, ThePsychologist.Enums.THE_PSYCHOLOGIST);
     }
 }
