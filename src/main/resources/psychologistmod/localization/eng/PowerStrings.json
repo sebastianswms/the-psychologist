@@ -4,5 +4,15 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+
+  "${modID}:Feedback": {
+    "NAME": "Feedback",
+    "DESCRIPTIONS": [
+      "Whenever you attack, take #b",
+      " damage. Halved at the end of each round.",
+      "Whenever it attacks, it takes #b",
+      " damage. Halved at the end of each round."
+    ]
   }
 }

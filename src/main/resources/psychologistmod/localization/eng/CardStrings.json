@@ -8,5 +8,26 @@
       "If you need to use it for stuff.",
       "Blizzard is a good example for this."
     ]
+  },
+
+  "${modID}:Conditioning": {
+    "NAME": "Conditioning",
+    "DESCRIPTION": "Apply !M! ${modID}:Feedback and temporary Strength to ANY target. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Apply !M! ${modID}:Feedback and temporary Strength to ANY target. NL Exhaust."
+  },
+
+  "${modID}:Defend_Maroon": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+
+  "${modID}:NegativeReinforcement": {
+    "NAME": "Negative Reinforcement",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${modID}:Feedback to ALL enemies."
+  },
+
+  "${modID}:Strike_Maroon": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
   }
 }

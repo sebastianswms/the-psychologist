@@ -1,15 +1,10 @@
 [
   {
-    "PROPER_NAME": "This is displayed in the tooltip.",
+    "PROPER_NAME": "Feedback",
     "NAMES": [
-      "these",
-      "are",
-      "detected",
-      "in",
-      "the",
-      "text"
+      "feedback"
     ],
-    "DESCRIPTION": "This is displayed in the tooltip. Note, spaces are not allowed in NAMES. Also, they should be entirely lowercase. For multi-word keywords, see the next one."
+    "DESCRIPTION": "Whenever the target attacks, it takes damage. Halved at the end of each round."
   },
   {
     "PROPER_NAME": "Multiword Keyword",

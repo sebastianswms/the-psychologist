@@ -1,8 +1,10 @@
 package psychologistmod;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import psychologistmod.cards.BaseCard;
 import psychologistmod.characters.ThePsychologist;
 import psychologistmod.util.GeneralUtils;
 import psychologistmod.util.KeywordInfo;
@@ -29,6 +31,7 @@ import java.util.Set;
 
 @SpireInitializer
 public class ThePsychologistMod implements
+        EditCardsSubscriber,
         EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
@@ -202,5 +205,13 @@ public class ThePsychologistMod implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new ThePsychologist(),
                 CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, ThePsychologist.Enums.THE_PSYCHOLOGIST);
+    }
+
+    @Override
+    public void receiveEditCards() {
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BaseCard.class) //In the same package as this class
+                .setDefaultSeen(true) //And marks them as seen in the compendium
+                .cards(); //Adds the cards
     }
 }

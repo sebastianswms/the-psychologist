@@ -9,9 +9,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
-import com.megacrit.cardcrawl.cards.green.Neutralize;
-import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -22,6 +19,8 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import psychologistmod.cards.Defend_Maroon;
+import psychologistmod.cards.Strike_Maroon;
 
 import java.util.ArrayList;
 
@@ -80,11 +79,15 @@ public class ThePsychologist extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Strike_Red.ID);
-        retVal.add(Strike_Red.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Neutralize.ID);
+        retVal.add(Strike_Maroon.ID);
+        retVal.add(Strike_Maroon.ID);
+        retVal.add(Strike_Maroon.ID);
+        retVal.add(Strike_Maroon.ID);
+        retVal.add(Defend_Maroon.ID);
+        retVal.add(Defend_Maroon.ID);
+        retVal.add(Defend_Maroon.ID);
+        retVal.add(Defend_Maroon.ID);
+        retVal.add(Defend_Maroon.ID);
 
         return retVal;
     }
@@ -102,7 +105,8 @@ public class ThePsychologist extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new Strike_Red();
+        return new Strike_Maroon();
+        // TODO: Update this to be a non-strike non-defend starter card.
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/
