@@ -4,8 +4,15 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.patches.BlockModifierPatches;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnCardDrawPower;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnLoseTempHpPower;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import psychologistmod.cards.BaseCard;
 import psychologistmod.characters.ThePsychologist;
+import psychologistmod.orbs.DoctrineOrb;
 import psychologistmod.util.GeneralUtils;
 import psychologistmod.util.KeywordInfo;
 import psychologistmod.util.TextureLoader;
@@ -35,6 +42,8 @@ public class ThePsychologistMod implements
         EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
+        OnCardUseSubscriber,
+        PostDrawSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID;
@@ -59,6 +68,7 @@ public class ThePsychologistMod implements
     public static String makeID(String id) {
         return modID + ":" + id;
     }
+
 
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
@@ -181,6 +191,9 @@ public class ThePsychologistMod implements
     public static String relicPath(String file) {
         return resourcesFolder + "/relics/" + file;
     }
+    public static String orbPath(String file) {
+        return resourcesFolder + "/orbs/" + file;
+    }
 
 
     //This determines the mod's ID based on information stored by ModTheSpire.
@@ -213,5 +226,25 @@ public class ThePsychologistMod implements
                 .packageFilter(BaseCard.class) //In the same package as this class
                 .setDefaultSeen(true) //And marks them as seen in the compendium
                 .cards(); //Adds the cards
+    }
+
+    public void receiveCardUsed(AbstractCard c)
+    {
+        for (AbstractOrb o : AbstractDungeon.player.orbs) {
+            if (o instanceof DoctrineOrb) {
+                DoctrineOrb u = (DoctrineOrb)o;
+                u.onCardUse(c);
+            }
+        }
+    }
+
+    @Override
+    public void receivePostDraw(AbstractCard c) {
+        for (AbstractOrb o : AbstractDungeon.player.orbs) {
+            if (o instanceof DoctrineOrb) {
+                DoctrineOrb u = (DoctrineOrb)o;
+                u.onCardDraw(c);
+            }
+        }
     }
 }

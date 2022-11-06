@@ -8,5 +8,31 @@
       " NL #yEvoke: Deal #b",
       " damage to all enemies."
     ]
+  },
+
+  "${modID}:Therapeutic": {
+    "NAME": "Therapeutic Doctrine",
+    "DESCRIPTION": [
+      "After spending #b",
+      " Energy on attacks, gain #b",
+      " #yTemporary #yHP"
+    ]
+  },
+
+  "${modID}:Practical": {
+    "NAME": "Practical Doctrine",
+    "DESCRIPTION": [
+      "After spending #b",
+      " Energy on skills, gain #b",
+      " #yVigor"
+    ]
+  },
+
+  "${modID}:Academic": {
+    "NAME": "Academic Doctrine",
+    "DESCRIPTION": [
+      "After drawing cards with a total cost of #b",
+      ", gain"
+    ]
   }
 }
