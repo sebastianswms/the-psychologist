@@ -26,8 +26,8 @@ public class Practical extends DoctrineOrb {
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
-    private static final int EVOKE_AMOUNT = 8;
-    private static final int TIMER_AMOUNT = 8;
+    private static final int EVOKE_AMOUNT = 9;
+    private static final int TIMER_AMOUNT = 3;
 
     public Practical() {
         super(ORB_ID, orbPath(NAME + ".png"), EVOKE_AMOUNT, TIMER_AMOUNT);
@@ -39,16 +39,9 @@ public class Practical extends DoctrineOrb {
     }
 
     @Override
-    public void updateDescription() { // Set the on-hover description of the orb
-        applyRigor();
-        description = DESCRIPTIONS[0] + timer + DESCRIPTIONS [1] + evokeAmount + DESCRIPTIONS[2];
-
-    }
-
-    @Override
     public void onAchieve() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new VigorPower(p, this.EVOKE_AMOUNT), this.EVOKE_AMOUNT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new VigorPower(p, this.evokeAmount), this.evokeAmount));
     }
 
     @Override

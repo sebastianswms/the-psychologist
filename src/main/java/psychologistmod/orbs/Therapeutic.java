@@ -25,8 +25,8 @@ public class Therapeutic extends DoctrineOrb {
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
-    private static final int EVOKE_AMOUNT = 8;
-    private static final int TIMER_AMOUNT = 8;
+    private static final int EVOKE_AMOUNT = 9;
+    private static final int TIMER_AMOUNT = 3;
 
     // Animation Rendering Numbers - You can leave these at default, or play around with them and see what they change.
 //    private float vfxTimer = 1.0f;
@@ -45,16 +45,9 @@ public class Therapeutic extends DoctrineOrb {
     }
 
     @Override
-    public void updateDescription() { // Set the on-hover description of the orb
-        applyRigor();
-        description = DESCRIPTIONS[0] + timer + DESCRIPTIONS [1] + evokeAmount + DESCRIPTIONS[2];
-
-    }
-
-    @Override
     public void onAchieve() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p,p,evokeAmount)); // Gain temp HP
+        AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p,p,evokeAmount));
     }
 
     @Override

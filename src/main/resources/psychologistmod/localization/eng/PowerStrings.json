@@ -10,9 +10,18 @@
     "NAME": "Feedback",
     "DESCRIPTIONS": [
       "Whenever you attack, take #b",
-      " damage. Halved at the end of each round.",
+      " damage. Halved at the end of each round, rounding down.",
       "Whenever it attacks, it takes #b",
-      " damage. Halved at the end of each round."
+      " damage. Halved at the end of each round, rounding down."
+    ]
+  },
+
+  "${modID}:Rigor": {
+    "NAME": "Rigor",
+    "DESCRIPTIONS": [
+      "Increases the effect of Doctrines by #b",
+      "Decreases the effect of Doctrines by #b",
+      "."
     ]
   }
 }

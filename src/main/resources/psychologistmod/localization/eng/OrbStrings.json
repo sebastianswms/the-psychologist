@@ -14,8 +14,8 @@
     "NAME": "Therapeutic Doctrine",
     "DESCRIPTION": [
       "After spending #b",
-      " Energy on attacks, gain #b",
-      " #yTemporary #yHP"
+      " energy on attacks, gain #b",
+      " #yTemporary #yHP."
     ]
   },
 
@@ -23,8 +23,8 @@
     "NAME": "Practical Doctrine",
     "DESCRIPTION": [
       "After spending #b",
-      " Energy on skills, gain #b",
-      " #yVigor"
+      " energy on skills, gain #b",
+      " #yVigor."
     ]
   },
 
@@ -32,7 +32,8 @@
     "NAME": "Academic Doctrine",
     "DESCRIPTION": [
       "After drawing cards with a total cost of #b",
-      ", gain"
+      ", #yScry #b",
+      " and gain [E] (energy gain is unaffected by Rigor)."
     ]
   }
 }

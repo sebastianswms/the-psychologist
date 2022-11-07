@@ -44,6 +44,7 @@ public class ThePsychologistMod implements
         EditKeywordsSubscriber,
         OnCardUseSubscriber,
         PostDrawSubscriber,
+        OnPowersModifiedSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID;
@@ -232,8 +233,8 @@ public class ThePsychologistMod implements
     {
         for (AbstractOrb o : AbstractDungeon.player.orbs) {
             if (o instanceof DoctrineOrb) {
-                DoctrineOrb u = (DoctrineOrb)o;
-                u.onCardUse(c);
+                DoctrineOrb d = (DoctrineOrb)o;
+                d.onCardUse(c);
             }
         }
     }
@@ -242,8 +243,17 @@ public class ThePsychologistMod implements
     public void receivePostDraw(AbstractCard c) {
         for (AbstractOrb o : AbstractDungeon.player.orbs) {
             if (o instanceof DoctrineOrb) {
-                DoctrineOrb u = (DoctrineOrb)o;
-                u.onCardDraw(c);
+                DoctrineOrb d = (DoctrineOrb)o;
+                d.onCardDraw(c);
+            }
+        }
+    }
+
+    @Override
+    public void receivePowersModified() {
+        for (AbstractOrb o : AbstractDungeon.player.orbs) {
+            if (o instanceof DoctrineOrb) {
+                o.updateDescription();
             }
         }
     }

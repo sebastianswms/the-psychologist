@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -28,8 +29,8 @@ public class Academic extends DoctrineOrb {
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
-    private static final int EVOKE_AMOUNT = 1;
-    private static final int TIMER_AMOUNT = 16;
+    private static final int EVOKE_AMOUNT = 3;
+    private static final int TIMER_AMOUNT = 12;
 
     public Academic() {
         super(ORB_ID, orbPath(NAME + ".png"), EVOKE_AMOUNT, TIMER_AMOUNT);
@@ -41,19 +42,15 @@ public class Academic extends DoctrineOrb {
     }
 
     @Override
-    public void updateDescription() { // Set the on-hover description of the orb
-        applyRigor();
-        description = DESCRIPTIONS[0] + timer + DESCRIPTIONS [1] + String.join("", Collections.nCopies(evokeAmount, " [E]"));
-    }
-
-    @Override
     public void onAchieve() {
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(EVOKE_AMOUNT));
+        if(evokeAmount >= 0){
+            AbstractDungeon.actionManager.addToBottom(new ScryAction(evokeAmount));
+        }
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
     }
 
     @Override
     public void onCardDraw(AbstractCard c){
-        AbstractPlayer p = AbstractDungeon.player;
         switch(c.costForTurn){
             case -1:
                 this.decrementTimer(EnergyPanel.getCurrentEnergy());
@@ -62,7 +59,6 @@ public class Academic extends DoctrineOrb {
                 break;
             default:
                 this.decrementTimer(c.costForTurn);
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST), 0.1f));
         }
     }
 

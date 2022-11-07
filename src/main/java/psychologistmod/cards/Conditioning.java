@@ -28,7 +28,7 @@ public class Conditioning extends BaseCard {
 
     public static final String ID = makeID(cardInfo.baseId);
 
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 3;
 
     public Conditioning() {
         super(cardInfo, true);

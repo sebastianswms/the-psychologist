@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
 import psychologistmod.ThePsychologistMod;
 import psychologistmod.actions.AchieveDoctrineAction;
+import psychologistmod.powers.RigorPower;
 
 public abstract class DoctrineOrb extends AbstractOrb {
     private float vfxTimer = 1.0F;
@@ -29,13 +30,12 @@ public abstract class DoctrineOrb extends AbstractOrb {
     private static final float PI_4 = 12.566371F;
 
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString("DoctrineOrb");
-    public static final String DESCRIPTION[] = orbString.DESCRIPTION;
+    public static final String DESCRIPTIONS[] = orbString.DESCRIPTION;
 
     protected boolean showChannelValue = true;
 
     public int baseTimer;
     public int timer;
-    public int elapsed;
     public boolean achieving = false;
 
     public String[] descriptions;
@@ -46,10 +46,9 @@ public abstract class DoctrineOrb extends AbstractOrb {
 
         this.baseTimer = timer;
         this.timer = this.baseTimer;
-        this.elapsed = 0;
 
-        this.evokeAmount = evokeAmount;
-        this.baseEvokeAmount = this.evokeAmount;
+        this.baseEvokeAmount = evokeAmount;
+        this.evokeAmount = this.baseEvokeAmount;
 
         this.channelAnimTimer = 0.5F;
 
@@ -63,7 +62,6 @@ public abstract class DoctrineOrb extends AbstractOrb {
 
     public void decrementTimer(int amountToDecrement) {
         this.timer -= amountToDecrement;
-        this.elapsed += amountToDecrement;
         updateDescription();
         if (this.timer <= 0 && this.achieving == false) {
             this.achieving = true;
@@ -87,23 +85,26 @@ public abstract class DoctrineOrb extends AbstractOrb {
         AbstractDungeon.effectsQueue.add(new PlasmaOrbActivateEffect(this.cX, this.cY));
     }
 
+    @Override
+    public void updateDescription() { // Set the on-hover description of the orb
+        applyRigor();
+        description = DESCRIPTIONS[0] + timer + DESCRIPTIONS [1] + evokeAmount + DESCRIPTIONS[2];
+
+    }
+
     public void applyRigor()
     {
-        AbstractPower power = AbstractDungeon.player.getPower("Rigor");
+        AbstractPower power = AbstractDungeon.player.getPower(RigorPower.POWER_ID);
         if (power == null) {
-            this.timer = Math.max(0,this.timer);
+            this.evokeAmount = Math.max(0,this.evokeAmount);
             return;
         }
-
-        this.timer = Math.max(0, this.baseTimer - power.amount - this.elapsed);
+        this.evokeAmount = Math.max(0, this.baseEvokeAmount + power.amount);
+        this.timer = Math.max(0,this.timer);
     }
 
-    @Override //if you want to ignore Focus
-    public void applyFocus()
-    {
-        passiveAmount = basePassiveAmount;
-        evokeAmount = baseEvokeAmount;
-    }
+    @Override
+    public void applyFocus(){}
 
 //    public void activateEffect() {
 //        float speedTime = 0.6F / AbstractDungeon.player.orbs.size();
