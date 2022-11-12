@@ -16,14 +16,34 @@
     "UPGRADE_DESCRIPTION": "Retain. NL Apply !M! ${modID}:Feedback and temporary Strength to ANY target. NL Exhaust."
   },
 
+  "${modID}:Consider": {
+    "NAME": "Consider",
+    "DESCRIPTION": "Gain !B! Block. Draw !M! cards."
+  },
+
   "${modID}:Defend_Maroon": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
 
+  "${modID}:Guidance": {
+    "NAME": "Guidance",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Feedback."
+  },
+
+  "${modID}:Medication": {
+    "NAME": "Medication",
+    "DESCRIPTION": "Gain !B! Block. Increase this card's cost by !M! this combat."
+  },
+
   "${modID}:NegativeReinforcement": {
     "NAME": "Negative Reinforcement",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${modID}:Feedback to ALL enemies."
+  },
+
+  "${modID}:SelfCare": {
+    "NAME": "Self Care",
+    "DESCRIPTION": "Gain !M! Temporary_HP. If you have Block, draw a card."
   },
 
   "${modID}:Strike_Maroon": {

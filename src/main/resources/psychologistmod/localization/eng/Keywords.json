@@ -1,10 +1,46 @@
 [
   {
+    "PROPER_NAME": "Academic",
+    "NAMES": [
+      "academic"
+    ],
+    "DESCRIPTION": "After drawing cards with a total cost of #b15, #yScry #b3 and gain [E] (energy gain is unaffected by #yRigor)."
+  },
+  {
+    "PROPER_NAME": "Doctrine",
+    "NAMES": [
+      "doctrine",
+      "doctrines"
+    ],
+    "DESCRIPTION": "Doctrines are orbs which evoke automatically after certain requirements."
+  },
+  {
     "PROPER_NAME": "Feedback",
     "NAMES": [
       "feedback"
     ],
     "DESCRIPTION": "Whenever the target attacks, it takes damage. Halved at the end of each round."
+  },
+  {
+    "PROPER_NAME": "Practical",
+    "NAMES": [
+      "practical"
+    ],
+    "DESCRIPTION": "After spending #b3 energy on skills, gain #b9 #yVigor."
+  },
+  {
+    "PROPER_NAME": "Rigor",
+    "NAMES": [
+      "rigor"
+    ],
+    "DESCRIPTION": "Rigor increases the effects of Doctrines."
+  },
+  {
+    "PROPER_NAME": "Therapeutic",
+    "NAMES": [
+      "therapeutic"
+    ],
+    "DESCRIPTION": "After spending #b3 energy on attacks, gain #b9 #yTemporary #yHP."
   },
   {
     "PROPER_NAME": "Multiword Keyword",

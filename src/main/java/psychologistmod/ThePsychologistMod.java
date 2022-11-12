@@ -5,14 +5,14 @@ import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.BlockModifierPatches;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnCardDrawPower;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnLoseTempHpPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import psychologistmod.cards.BaseCard;
 import psychologistmod.characters.ThePsychologist;
 import psychologistmod.orbs.DoctrineOrb;
+import psychologistmod.relics.BaseRelic;
 import psychologistmod.util.GeneralUtils;
 import psychologistmod.util.KeywordInfo;
 import psychologistmod.util.TextureLoader;
@@ -39,6 +39,7 @@ import java.util.Set;
 @SpireInitializer
 public class ThePsychologistMod implements
         EditCardsSubscriber,
+        EditRelicsSubscriber,
         EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
@@ -256,5 +257,19 @@ public class ThePsychologistMod implements
                 o.updateDescription();
             }
         }
+    }
+
+    @Override
+    public void receiveEditRelics() {
+        new AutoAdd(modID)
+                .packageFilter(BaseRelic.class)
+                .any(BaseRelic.class, (info, relic) -> {
+                    if (relic.pool != null) {
+                        BaseMod.addRelicToCustomPool(relic, relic.pool);
+                    }else {
+                        BaseMod.addRelic(relic, relic.relicType);
+                    }
+                        UnlockTracker.markRelicAsSeen(relic.relicId);
+                });
     }
 }

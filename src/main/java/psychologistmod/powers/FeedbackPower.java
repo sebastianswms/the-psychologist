@@ -14,13 +14,14 @@ public class FeedbackPower extends BasePower implements CloneablePowerInterface 
     public static final String POWER_ID = makeID("Feedback");
     private static final AbstractPower.PowerType TYPE = PowerType.DEBUFF;
     private static final boolean TURN_BASED = true;
+    private static final boolean CAN_GO_NEGATIVE = false;
     //The only thing this controls is the color of the number on the power icon.
     //Turn based powers are white, non-turn based powers are red or green depending on if they're a buff or debuff.
     //For a power to actually decrease/go away on its own they do it themselves.
     //Look at powers that do this like VulnerablePower and DoubleTapPower.
 
     public FeedbackPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        super(POWER_ID, TYPE, TURN_BASED, CAN_GO_NEGATIVE, owner, amount);
     }
 
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {

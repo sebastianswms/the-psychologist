@@ -30,7 +30,7 @@ public class Academic extends DoctrineOrb {
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
     private static final int EVOKE_AMOUNT = 3;
-    private static final int TIMER_AMOUNT = 12;
+    private static final int TIMER_AMOUNT = 15;
 
     public Academic() {
         super(ORB_ID, orbPath(NAME + ".png"), EVOKE_AMOUNT, TIMER_AMOUNT);
@@ -39,6 +39,12 @@ public class Academic extends DoctrineOrb {
 
         angle = MathUtils.random(360.0f); // More Animation-related Numbers
         channelAnimTimer = 0.5f;
+    }
+
+    @Override
+    public void updateDescription() {
+        applyRigor();
+        description = DESCRIPTIONS[0] + timer + DESCRIPTIONS [1] + evokeAmount + DESCRIPTIONS[2];
     }
 
     @Override

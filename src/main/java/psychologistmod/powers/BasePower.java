@@ -16,18 +16,22 @@ public abstract class BasePower extends AbstractPower {
     protected AbstractCreature source;
     protected String[] DESCRIPTIONS;
 
-    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
-        this(id, powerType, isTurnBased, owner, null, amount);
+    public BasePower(String id, boolean isTurnBased, boolean canGoNegative, AbstractCreature owner, int amount) {
+        this(id, null, isTurnBased, canGoNegative, owner, amount);
     }
-    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount) {
-        this(id, powerType, isTurnBased, owner, source, amount, true);
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, boolean canGoNegative, AbstractCreature owner, int amount) {
+        this(id, powerType, isTurnBased, canGoNegative, owner,null, amount);
     }
-    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount, boolean initDescription) {
-        this(id, powerType, isTurnBased, owner, source, amount, initDescription, true);
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, boolean canGoNegative, AbstractCreature owner, AbstractCreature source, int amount) {
+        this(id, powerType, isTurnBased, canGoNegative, owner, source, amount, true);
     }
-    public BasePower(String id, PowerType powerType, boolean isTurnBased, AbstractCreature owner, AbstractCreature source, int amount, boolean initDescription, boolean loadImage) {
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, boolean canGoNegative, AbstractCreature owner, AbstractCreature source, int amount, boolean initDescription) {
+        this(id, powerType, isTurnBased, canGoNegative, owner, source, amount, initDescription, true);
+    }
+    public BasePower(String id, PowerType powerType, boolean isTurnBased, boolean canGoNegative, AbstractCreature owner, AbstractCreature source, int amount, boolean initDescription, boolean loadImage) {
         this.ID = id;
         this.isTurnBased = isTurnBased;
+        this.canGoNegative = canGoNegative;
 
         PowerStrings strings = getPowerStrings(this.ID);
         this.name = strings.NAME;

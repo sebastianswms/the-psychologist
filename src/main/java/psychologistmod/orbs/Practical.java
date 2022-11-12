@@ -39,6 +39,12 @@ public class Practical extends DoctrineOrb {
     }
 
     @Override
+    public void updateDescription() {
+        applyRigor();
+        description = DESCRIPTIONS[0] + timer + DESCRIPTIONS [1] + evokeAmount + DESCRIPTIONS[2];
+    }
+
+    @Override
     public void onAchieve() {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new VigorPower(p, this.evokeAmount), this.evokeAmount));

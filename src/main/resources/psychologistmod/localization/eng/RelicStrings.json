@@ -1,9 +1,9 @@
 {
-  "${modID}:RelicID": {
-    "NAME": "Good Relic",
-    "FLAVOR": "Flavor text displayed in detailed relic view.",
+  "${modID}:ThesisNotes": {
+    "NAME": "Thesis Notes",
+    "FLAVOR": "A collection of notes and psychographic profiles comprising the Psycholgist's current research.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. [E] is an energy icon."
+      "At the start of each combat, gain an #yAcademic #yDoctrine."
     ]
   }
 }

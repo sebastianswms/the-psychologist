@@ -17,10 +17,12 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import psychologistmod.cards.Consider;
 import psychologistmod.cards.Defend_Maroon;
+import psychologistmod.cards.Guidance;
 import psychologistmod.cards.Strike_Maroon;
+import psychologistmod.relics.ThesisNotes;
 
 import java.util.ArrayList;
 
@@ -88,6 +90,8 @@ public class ThePsychologist extends CustomPlayer {
         retVal.add(Defend_Maroon.ID);
         retVal.add(Defend_Maroon.ID);
         retVal.add(Defend_Maroon.ID);
+        retVal.add(Guidance.ID);
+        retVal.add(Consider.ID);
 
         return retVal;
     }
@@ -96,7 +100,7 @@ public class ThePsychologist extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(ThesisNotes.ID);
 
         return retVal;
     }
@@ -105,8 +109,7 @@ public class ThePsychologist extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new Strike_Maroon();
-        // TODO: Update this to be a non-strike non-defend starter card.
+        return new Guidance();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/

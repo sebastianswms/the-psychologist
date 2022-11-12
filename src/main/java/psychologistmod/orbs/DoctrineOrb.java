@@ -63,7 +63,7 @@ public abstract class DoctrineOrb extends AbstractOrb {
     public void decrementTimer(int amountToDecrement) {
         this.timer -= amountToDecrement;
         updateDescription();
-        if (this.timer <= 0 && this.achieving == false) {
+        if (this.timer <= 0 && !this.achieving) {
             this.achieving = true;
             AbstractDungeon.actionManager.addToBottom(new AchieveDoctrineAction(this));
         }
@@ -85,22 +85,15 @@ public abstract class DoctrineOrb extends AbstractOrb {
         AbstractDungeon.effectsQueue.add(new PlasmaOrbActivateEffect(this.cX, this.cY));
     }
 
-    @Override
-    public void updateDescription() { // Set the on-hover description of the orb
-        applyRigor();
-        description = DESCRIPTIONS[0] + timer + DESCRIPTIONS [1] + evokeAmount + DESCRIPTIONS[2];
-
-    }
-
     public void applyRigor()
     {
         AbstractPower power = AbstractDungeon.player.getPower(RigorPower.POWER_ID);
+        this.timer = Math.max(0,this.timer);
         if (power == null) {
             this.evokeAmount = Math.max(0,this.evokeAmount);
             return;
         }
         this.evokeAmount = Math.max(0, this.baseEvokeAmount + power.amount);
-        this.timer = Math.max(0,this.timer);
     }
 
     @Override
