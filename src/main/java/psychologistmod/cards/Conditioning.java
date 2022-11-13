@@ -1,14 +1,11 @@
 package psychologistmod.cards;
 
-
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.evacipated.cardcrawl.mod.stslib.cards.targeting.SelfOrEnemyTargeting;
@@ -45,9 +42,9 @@ public class Conditioning extends BaseCard {
         if (target == null)
             target = AbstractDungeon.player;
 
-        addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)target, (AbstractCreature)p, (AbstractPower)new FeedbackPower((AbstractCreature)target, this.magicNumber), this.magicNumber));
-        addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)target, (AbstractCreature)p, (AbstractPower)new StrengthPower((AbstractCreature)target, this.magicNumber), this.magicNumber));
-        addToBot((AbstractGameAction)new ApplyPowerAction((AbstractCreature)target, (AbstractCreature)p, (AbstractPower)new LoseStrengthPower((AbstractCreature)target, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(target, p, new FeedbackPower(target, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(target, p, new StrengthPower(target, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(target, p, new LoseStrengthPower(target, this.magicNumber), this.magicNumber));
 
 
 
