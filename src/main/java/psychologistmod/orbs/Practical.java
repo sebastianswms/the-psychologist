@@ -1,6 +1,5 @@
 package psychologistmod.orbs;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -12,7 +11,6 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
-import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import psychologistmod.ThePsychologistMod;
@@ -53,27 +51,23 @@ public class Practical extends DoctrineOrb {
     @Override
     public void onCardUse(AbstractCard c){
         if(c.type == AbstractCard.CardType.SKILL){
-            AbstractPlayer p = AbstractDungeon.player;
-            switch(c.costForTurn){
-                case -1:
-                    this.decrementTimer(c.energyOnUse);
-                    break;
-                default:
-                    this.decrementTimer(c.costForTurn);
-                    AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST), 0.1f));
+            if(c.costForTurn == -1){
+                this.decrementTimer(c.energyOnUse);
             }
-
-            // TODO: Can remove Switch and use c.energyOnUse for all?
+            else{
+                this.decrementTimer(c.costForTurn);
+            }
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST), 0.1f));
         }
     }
 
     @Override
-    public void triggerEvokeAnimation() { // The evoke animation of this orb is the dark-orb activation effect.
+    public void triggerEvokeAnimation() {
         AbstractDungeon.effectsQueue.add(new DarkOrbActivateEffect(cX, cY));
     }
 
     @Override
-    public void playChannelSFX() { // When you channel this orb, the ATTACK_FIRE effect plays ("Fwoom").
+    public void playChannelSFX() {
         CardCrawlGame.sound.play("ATTACK_FIRE", 0.1f);
     }
 

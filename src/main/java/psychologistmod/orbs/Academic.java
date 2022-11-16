@@ -1,24 +1,17 @@
 package psychologistmod.orbs;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
-import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 
-import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import psychologistmod.ThePsychologistMod;
-
-import java.util.Collections;
 
 import static psychologistmod.ThePsychologistMod.orbPath;
 
@@ -60,7 +53,6 @@ public class Academic extends DoctrineOrb {
         switch(c.costForTurn){
             case -1:
                 this.decrementTimer(EnergyPanel.getCurrentEnergy());
-                break;
             case -2:
                 break;
             default:
@@ -69,12 +61,12 @@ public class Academic extends DoctrineOrb {
     }
 
     @Override
-    public void triggerEvokeAnimation() { // The evoke animation of this orb is the dark-orb activation effect.
+    public void triggerEvokeAnimation() {
         AbstractDungeon.effectsQueue.add(new DarkOrbActivateEffect(cX, cY));
     }
 
     @Override
-    public void playChannelSFX() { // When you channel this orb, the ATTACK_FIRE effect plays ("Fwoom").
+    public void playChannelSFX() {
         CardCrawlGame.sound.play("ATTACK_FIRE", 0.1f);
     }
 
