@@ -31,6 +31,11 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Feedback."
   },
 
+  "${modID}:HierarchyOfNeeds": {
+    "NAME": "Hierarchy of Needs",
+    "DESCRIPTION": "Gain !B! Block. If you already have Block, gain !M! Temporary_HP instead. If you already have Block and Temporary_HP, heal !M! HP instead."
+  },
+
   "${modID}:HitTheBooks": {
     "NAME": "Hit the Books",
     "DESCRIPTION": "{@@}Deal !D! damage. Gain an ${modID}:Academic ${modID}:Doctrine. Draw !M! card{!M!|>1=s}."
@@ -44,6 +49,11 @@
   "${modID}:NegativeReinforcement": {
     "NAME": "Negative Reinforcement",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${modID}:Feedback to ALL enemies."
+  },
+
+  "${modID}:New Leaf": {
+    "NAME": "New Leaf",
+    "DESCRIPTION": "Draw !M! card{!M!|>1=s}. Discard !M! card{!M!|>1=s}. Gain Vigor equal to their total cost. NL Exhaust."
   },
 
   "${modID}:Perfectionism": {
