@@ -1,11 +1,4 @@
 {
-  "${modID}:PowerID": {
-    "NAME": "Ultimate Power",
-    "DESCRIPTIONS": [
-      "You are Very Cool and Strong."
-    ]
-  },
-
   "${modID}:Feedback": {
     "NAME": "Feedback",
     "DESCRIPTIONS": [
@@ -16,11 +9,19 @@
     ]
   },
 
+  "${modID}:Pseudoscience": {
+    "NAME": "Pseudoscience",
+    "DESCRIPTIONS": [
+      "Lose #b",
+      " #yRigor at the start of each turn."
+    ]
+  },
+
   "${modID}:Rigor": {
     "NAME": "Rigor",
     "DESCRIPTIONS": [
-      "Increases the effect of Doctrines by #b",
-      "Decreases the effect of Doctrines by #b",
+      "Increases the effect of #yDoctrines by #b",
+      "Decreases the effect of #yDoctrines by #b",
       "."
     ]
   }

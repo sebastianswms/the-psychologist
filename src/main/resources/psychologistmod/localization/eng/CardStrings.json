@@ -51,14 +51,24 @@
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! ${modID}:Feedback to ALL enemies."
   },
 
-  "${modID}:New Leaf": {
+  "${modID}:NewLeaf": {
     "NAME": "New Leaf",
-    "DESCRIPTION": "Draw !M! card{!M!|>1=s}. Discard !M! card{!M!|>1=s}. Gain Vigor equal to their total cost. NL Exhaust."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. Discard !M! card{!M!|>1=s}. Gain Vigor equal to their total cost."
   },
 
   "${modID}:Perfectionism": {
     "NAME": "Perfectionism",
     "DESCRIPTION": "Gain !B! Block. If you're missing HP, gain !M! ${modID}:Feedback."
+  },
+
+  "${modID}:Pseudoscience": {
+    "NAME": "Pseudoscience",
+    "DESCRIPTION": "Gain !M! ${modID}:Rigor. Lose 3 ${modID}:Rigor at the start of each turn."
+  },
+
+  "${modID}:RetailTherapy": {
+    "NAME": "Retail Therapy",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage !M! times. NL Whenever spend gold at a shop, increase the damage of this card by 1."
   },
 
   "${modID}:SelfCare": {

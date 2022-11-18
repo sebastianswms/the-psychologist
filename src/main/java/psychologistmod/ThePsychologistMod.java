@@ -10,7 +10,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import psychologistmod.cards.BaseCard;
+import psychologistmod.cards.RetailTherapy;
 import psychologistmod.characters.ThePsychologist;
+import psychologistmod.interfaces.PostShopPurchaseSubscriber;
 import psychologistmod.orbs.DoctrineOrb;
 import psychologistmod.relics.BaseRelic;
 import psychologistmod.util.GeneralUtils;
@@ -31,10 +33,7 @@ import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @SpireInitializer
 public class ThePsychologistMod implements
@@ -46,6 +45,7 @@ public class ThePsychologistMod implements
         OnCardUseSubscriber,
         PostDrawSubscriber,
         OnPowersModifiedSubscriber,
+        PostShopPurchaseSubscriber,
         PostInitializeSubscriber {
     public static ModInfo info;
     public static String modID;
@@ -64,7 +64,7 @@ public class ThePsychologistMod implements
     private static final Color cardColor = new Color(74f/255f, 14f/255f, 37f/255f, 1f);
     private static final String CHAR_SELECT_BUTTON = characterPath("select/button.png");
     private static final String CHAR_SELECT_PORTRAIT = characterPath("select/portrait.png");
-
+    private static ArrayList<PostShopPurchaseSubscriber> postShopPurchaseSubscribers = new ArrayList<>();
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
@@ -86,6 +86,8 @@ public class ThePsychologistMod implements
     public ThePsychologistMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         logger.info(modID + " subscribed to BaseMod.");
+
+        postShopPurchaseSubscribers.add(this);
     }
 
     @Override
@@ -271,5 +273,22 @@ public class ThePsychologistMod implements
                     }
                         UnlockTracker.markRelicAsSeen(relic.relicId);
                 });
+    }
+
+    public static void publishPostShopPurchase(int price) {
+        logger.info("publish shop purchase");
+
+        for(PostShopPurchaseSubscriber sub: postShopPurchaseSubscribers) {
+            sub.receivePostShopPurchaseSubscriber(price);
+        }
+    }
+
+    @Override
+    public void receivePostShopPurchaseSubscriber(int price) {
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+            if(c instanceof RetailTherapy) {
+                ((RetailTherapy)c).moreDamage(price);
+            }
+        }
     }
 }
