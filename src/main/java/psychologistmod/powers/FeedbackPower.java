@@ -11,8 +11,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import psychologistmod.cards.LashOut;
 
 import static psychologistmod.ThePsychologistMod.makeID;
+import static psychologistmod.ThePsychologistMod.modID;
 
 public class FeedbackPower extends BasePower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID("Feedback");
@@ -36,7 +38,7 @@ public class FeedbackPower extends BasePower implements CloneablePowerInterface 
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (this.owner instanceof AbstractPlayer && card.type == AbstractCard.CardType.ATTACK) {
+        if (this.owner instanceof AbstractPlayer && card.type == AbstractCard.CardType.ATTACK && !(card instanceof LashOut)) {
             addToTop(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             flash();
         }

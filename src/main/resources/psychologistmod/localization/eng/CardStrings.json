@@ -41,6 +41,11 @@
     "DESCRIPTION": "{@@}Deal !D! damage. Gain an ${modID}:Academic ${modID}:Doctrine. Draw !M! card{!M!|>1=s}."
   },
 
+  "${modID}:LashOut": {
+    "NAME": "Lash Out",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. This attack doesn't trigger ${modID}:Feedback."
+  },
+
   "${modID}:Medication": {
     "NAME": "Medication",
     "DESCRIPTION": "Gain !B! Block. Increase this card's cost by !M! this combat."
@@ -56,6 +61,11 @@
     "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. Discard !M! card{!M!|>1=s}. Gain Vigor equal to their total cost."
   },
 
+  "${modID}:Overexplain": {
+    "NAME": "Overexplain",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable. Gain 4 ${modID}:Feedback."
+  },
+
   "${modID}:Perfectionism": {
     "NAME": "Perfectionism",
     "DESCRIPTION": "Gain !B! Block. If you're missing HP, gain !M! ${modID}:Feedback."
@@ -68,7 +78,7 @@
 
   "${modID}:RetailTherapy": {
     "NAME": "Retail Therapy",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage !M! times. NL Whenever spend gold at a shop, increase the damage of this card by 1."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage !M! times. NL Whenever you spend gold at a shop, increase the damage of this card by 1."
   },
 
   "${modID}:SelfCare": {

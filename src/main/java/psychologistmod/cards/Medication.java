@@ -16,7 +16,7 @@ public class Medication extends BaseCard {
             0,
             CardType.SKILL,
             CardTarget.SELF,
-            CardRarity.BASIC,
+            CardRarity.COMMON,
             ThePsychologist.Enums.CARD_COLOR);
     public static final String ID = makeID(cardInfo.baseId);
 
