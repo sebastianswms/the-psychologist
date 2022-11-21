@@ -10,6 +10,17 @@
     ]
   },
 
+  "${modID}:Carrot": {
+    "NAME": "Carrot",
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL Draw 1 card. NL Exhaust."
+  },
+
+  "${modID}:CarrotAndStick": {
+    "NAME": "Carrot and Stick",
+    "DESCRIPTION": "Shuffle a Carrot and a Stick into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Shuffle a Carrot and a Stick into your draw pile."
+  },
+
   "${modID}:Conditioning": {
     "NAME": "Conditioning",
     "DESCRIPTION": "Apply !M! ${modID}:Feedback and temporary Strength to ANY target. NL Exhaust.",
@@ -84,6 +95,11 @@
   "${modID}:SelfCare": {
     "NAME": "Self Care",
     "DESCRIPTION": "Gain !M! Temporary_HP. If you have Block, draw a card."
+  },
+
+  "${modID}:Stick": {
+    "NAME": "Stick",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Exhaust."
   },
 
   "${modID}:Strike_Maroon": {
