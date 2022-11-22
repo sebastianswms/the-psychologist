@@ -21,6 +21,11 @@
     "UPGRADE_DESCRIPTION": "Shuffle a Carrot and a Stick into your draw pile."
   },
 
+  "${modID}:CitedSources": {
+    "NAME": "CitedSources",
+    "DESCRIPTION": "Draw 1 card. NL If you draw a colorless card, Scry !M!."
+  },
+
   "${modID}:Conditioning": {
     "NAME": "Conditioning",
     "DESCRIPTION": "Apply !M! ${modID}:Feedback and temporary Strength to ANY target. NL Exhaust.",
@@ -75,6 +80,12 @@
   "${modID}:Overexplain": {
     "NAME": "Overexplain",
     "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable. Gain 4 ${modID}:Feedback."
+  },
+
+  "${modID}:PeerReview": {
+    "NAME": "PeerReview",
+    "DESCRIPTION": "Double your ${modID}:Rigor. NL Double your ${modID}:Feedback. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Double your ${modID}:Rigor. NL Double your ${modID}:Feedback."
   },
 
   "${modID}:Perfectionism": {
