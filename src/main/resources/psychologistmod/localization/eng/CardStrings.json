@@ -42,6 +42,12 @@
     "DESCRIPTION": "Gain !B! Block."
   },
 
+  "${modID}:Gaslighting": {
+    "NAME": "Gaslighting",
+    "DESCRIPTION": "ALL enemies lose HP equal to your ${modID}:Feedback.",
+    "UPGRADE_DESCRIPTION": "ALL enemies lose HP and gain ${modID}:Feedback equal to your ${modID}:Feedback."
+  },
+
   "${modID}:Guidance": {
     "NAME": "Guidance",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Feedback."
@@ -54,7 +60,7 @@
 
   "${modID}:HitTheBooks": {
     "NAME": "Hit the Books",
-    "DESCRIPTION": "{@@}Deal !D! damage. Gain an ${modID}:Academic ${modID}:Doctrine. Draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "Deal !D! damage. Gain an ${modID}:Academic ${modID}:Doctrine."
   },
 
   "${modID}:LashOut": {
