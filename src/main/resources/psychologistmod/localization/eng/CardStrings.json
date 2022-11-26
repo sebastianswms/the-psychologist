@@ -22,7 +22,7 @@
   },
 
   "${modID}:CitedSources": {
-    "NAME": "CitedSources",
+    "NAME": "Cited Sources",
     "DESCRIPTION": "Draw 1 card. NL If you draw a colorless card, Scry !M!."
   },
 
@@ -68,6 +68,11 @@
     "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. This attack doesn't trigger ${modID}:Feedback."
   },
 
+  "${modID}:MakeItPersonal": {
+    "NAME": "Make It Personal",
+    "DESCRIPTION": "Deal !D! damage. Gain Temporary_HP equal to unblocked damage dealt."
+  },
+
   "${modID}:Medication": {
     "NAME": "Medication",
     "DESCRIPTION": "Gain !B! Block. Increase this card's cost by !M! this combat."
@@ -89,7 +94,7 @@
   },
 
   "${modID}:PeerReview": {
-    "NAME": "PeerReview",
+    "NAME": "Peer Review",
     "DESCRIPTION": "Double your ${modID}:Rigor. NL Double your ${modID}:Feedback. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Double your ${modID}:Rigor. NL Double your ${modID}:Feedback."
   },
@@ -122,5 +127,10 @@
   "${modID}:Strike_Maroon": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
+  },
+
+  "${modID}:StrongStimulus": {
+    "NAME": "Strong Strimulus",
+    "DESCRIPTION": "Add !M! Conditioning to your hand."
   }
 }
