@@ -36,24 +36,19 @@ public class Conditioning extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         AbstractCreature target = SelfOrEnemyTargeting.getTarget(this);
 
-        if (target == null)
+        if (target == null) {
             target = AbstractDungeon.player;
+        }
 
-        addToBot(new ApplyPowerAction(target, p, new FeedbackPower(target, this.magicNumber), this.magicNumber));
-        addToBot(new ApplyPowerAction(target, p, new StrengthPower(target, this.magicNumber), this.magicNumber));
-        addToBot(new ApplyPowerAction(target, p, new LoseStrengthPower(target, this.magicNumber), this.magicNumber));
-
-
-
+        addToBot(new ApplyPowerAction(target, p, new FeedbackPower(target, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(target, p, new StrengthPower(target, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(target, p, new LoseStrengthPower(target, magicNumber), magicNumber));
     }
 
     @Override
     public AbstractCard makeCopy() {
         return new Conditioning();
     }
-
-
 }

@@ -109,14 +109,29 @@
     "DESCRIPTION": "Gain !M! ${modID}:Rigor. Lose 3 ${modID}:Rigor at the start of each turn."
   },
 
+  "${modID}:ResearchMethods": {
+    "NAME": "Research Methods",
+    "DESCRIPTION": "Gain !M! ${modID}:Rigor."
+  },
+
   "${modID}:RetailTherapy": {
     "NAME": "Retail Therapy",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage !M! times. NL Whenever you spend gold at a shop, increase the damage of this card by 1."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Spending gold at a shop increases the damage of this card by 1."
+  },
+
+  "${modID}:RoughDraft": {
+    "NAME": "Rough Draft",
+    "DESCRIPTION": "{@@}Gain !B! Block. Draw !M! additional card{!M!|>1=s} next turn."
   },
 
   "${modID}:SelfCare": {
     "NAME": "Self Care",
     "DESCRIPTION": "Gain !M! Temporary_HP. If you have Block, draw a card."
+  },
+
+  "${modID}:SelfRestraint": {
+    "NAME": "Self Restraint",
+    "DESCRIPTION": "Deal !D! damage !M! times."
   },
 
   "${modID}:Stick": {
