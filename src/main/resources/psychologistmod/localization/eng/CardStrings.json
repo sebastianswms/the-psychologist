@@ -37,6 +37,16 @@
     "DESCRIPTION": "Gain !B! Block. Draw !M! cards."
   },
 
+  "${modID}:Counselling": {
+    "NAME": "Counselling",
+    "DESCRIPTION": "{@@}Gain a ${modID}:Therapeutic ${modID}:Doctrine. NL Draw !M! card{!M!|>1=s}."
+  },
+
+  "${modID}:Curriculum": {
+    "NAME": "Curriculum",
+    "DESCRIPTION": "Gain !B! Block. NL If you have a ${modID}:Doctrine, gain [E] [E]."
+  },
+
   "${modID}:Defend_Maroon": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
@@ -126,7 +136,7 @@
 
   "${modID}:SelfCare": {
     "NAME": "Self Care",
-    "DESCRIPTION": "Gain !M! Temporary_HP. If you have Block, draw a card."
+    "DESCRIPTION": "Gain !M! Temporary_HP. If you have Block, draw 1 card."
   },
 
   "${modID}:SelfRestraint": {
