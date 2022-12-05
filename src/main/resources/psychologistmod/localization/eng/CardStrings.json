@@ -10,6 +10,11 @@
     ]
   },
 
+  "${modID}:Applications": {
+    "NAME": "Applications",
+    "DESCRIPTION": "Deal !D! damage. Gain a ${modID}:Practical ${modID}:Doctrine."
+  },
+
   "${modID}:Carrot": {
     "NAME": "Carrot",
     "DESCRIPTION": "Gain !M! Temporary_HP. NL Draw 1 card. NL Exhaust."
@@ -37,9 +42,19 @@
     "DESCRIPTION": "Gain !B! Block. Draw !M! cards."
   },
 
+  "${modID}:Conviction": {
+    "NAME": "Conviction",
+    "DESCRIPTION": "Deal !D! damage for each ${modID}:Doctrine you have."
+  },
+
   "${modID}:Counselling": {
     "NAME": "Counselling",
     "DESCRIPTION": "{@@}Gain a ${modID}:Therapeutic ${modID}:Doctrine. NL Draw !M! card{!M!|>1=s}."
+  },
+
+  "${modID}:Critique": {
+    "NAME": "Critique",
+    "DESCRIPTION": "Apply 1 Weak and !M! ${modID}:Feedback."
   },
 
   "${modID}:Curriculum": {
