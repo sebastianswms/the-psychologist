@@ -9,6 +9,15 @@
     ]
   },
 
+  "${modID}:Open": {
+    "NAME": "Open",
+    "DESCRIPTIONS": [
+      "When your Block is broken, draw #b",
+      " card.",
+      " cards."
+    ]
+  },
+
   "${modID}:Pseudoscience": {
     "NAME": "Pseudoscience",
     "DESCRIPTIONS": [

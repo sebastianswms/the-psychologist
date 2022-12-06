@@ -67,6 +67,11 @@
     "DESCRIPTION": "Gain !B! Block."
   },
 
+  "${modID}:FieldResearch": {
+    "NAME": "Field Research",
+    "DESCRIPTION": "{@@}Deal !D! damage twice. Shuffle !M! Insight card{!M!|>1=s} into your draw pile."
+  },
+
   "${modID}:Gaslighting": {
     "NAME": "Gaslighting",
     "DESCRIPTION": "ALL enemies lose HP equal to your ${modID}:Feedback.",
@@ -111,6 +116,11 @@
   "${modID}:NewLeaf": {
     "NAME": "New Leaf",
     "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. Discard !M! card{!M!|>1=s}. Gain Vigor equal to their total cost."
+  },
+
+  "${modID}:OpenUp": {
+    "NAME": "Open Up",
+    "DESCRIPTION": "{@@}Deal !D! damage. When your Block is broken this turn, draw !M! card{!M!|>1=s}."
   },
 
   "${modID}:Overexplain": {
