@@ -37,6 +37,8 @@ public abstract class BaseCard extends CustomCard {
     protected boolean baseRetain = false;
     protected boolean upgRetain = false;
 
+    protected boolean upgTargetAll = false; // My additions.
+
     public BaseCard(CardInfo cardInfo) {
         this(cardInfo.baseId, cardInfo.baseCost, cardInfo.cardType, cardInfo.cardTarget, cardInfo.cardRarity, cardInfo.cardColor);
     }
@@ -174,6 +176,10 @@ public abstract class BaseCard extends CustomCard {
         this.selfRetain = baseRetain;
     }
 
+    protected void upgTargetAll(boolean targetAll){ // My additions.
+        this.upgTargetAll = true;
+    }
+
 
     @Override
     public AbstractCard makeStatEquivalentCopy() {
@@ -204,6 +210,8 @@ public abstract class BaseCard extends CustomCard {
             ((BaseCard) card).upgInnate = this.upgInnate;
             ((BaseCard) card).baseRetain = this.baseRetain;
             ((BaseCard) card).upgRetain = this.upgRetain;
+
+            ((BaseCard) card).upgTargetAll = this.upgTargetAll; // My additions.
         }
 
         return card;
@@ -262,6 +270,10 @@ public abstract class BaseCard extends CustomCard {
             if (baseRetain ^ upgRetain)
                 this.selfRetain = upgRetain;
 
+            if (upgTargetAll) {
+                this.target = CardTarget.ALL_ENEMY; // My additions.
+                this.isMultiDamage = true;
+            }
 
             this.initializeDescription();
         }

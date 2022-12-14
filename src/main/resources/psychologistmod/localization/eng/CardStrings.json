@@ -15,6 +15,13 @@
     "DESCRIPTION": "Deal !D! damage. Gain a ${modID}:Practical ${modID}:Doctrine."
   },
 
+  "${modID}:Browbeat": {
+    "NAME": "Browbeat",
+    "DESCRIPTION": "Deal damage equal to the number of cards in your hand.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the number of cards in your hand to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [" NL (Deals !D! damage.)"]
+  },
+
   "${modID}:Carrot": {
     "NAME": "Carrot",
     "DESCRIPTION": "Gain !M! Temporary_HP. NL Draw 1 card. NL Exhaust."
