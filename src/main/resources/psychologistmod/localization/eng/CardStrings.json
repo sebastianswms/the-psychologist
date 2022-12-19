@@ -176,6 +176,11 @@
     "DESCRIPTION": "Deal !D! damage !M! times."
   },
 
+  "${modID}:SocialExperiment": {
+    "NAME": "Social Experiment",
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies. Add !M! Insight card{!M!|>1=s} to your discard pile."
+  },
+
   "${modID}:Stick": {
     "NAME": "Stick",
     "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Exhaust."

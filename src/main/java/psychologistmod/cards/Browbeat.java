@@ -28,7 +28,6 @@ public class Browbeat extends BaseCard {
     public Browbeat() {
         super(cardInfo);
         setDamage(DAMAGE);
-
         upgTargetAll(true);
     }
 
@@ -56,10 +55,10 @@ public class Browbeat extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(!this.upgraded){
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+            addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
             this.rawDescription = cardStrings.DESCRIPTION;
         } else {
-            addToBot(new DamageAllEnemiesAction(p, this.damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+            addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
         }
         initializeDescription();
