@@ -171,6 +171,11 @@
     "DESCRIPTION": "Gain !M! Temporary_HP. If you have Block, draw 1 card."
   },
 
+  "${modID}:SelfImprovement": {
+    "NAME": "Self Improvement",
+    "DESCRIPTION": "Gain !M! Strength. NL When you add this card to your deck, upgrade a random Attack or Skill."
+  },
+
   "${modID}:SelfRestraint": {
     "NAME": "Self Restraint",
     "DESCRIPTION": "Deal !D! damage !M! times."
