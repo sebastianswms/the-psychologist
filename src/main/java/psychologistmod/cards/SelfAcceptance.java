@@ -11,9 +11,9 @@ import psychologistmod.util.CardInfo;
 
 import static psychologistmod.ThePsychologistMod.makeID;
 
-public class Counselling extends BaseCard {
+public class SelfAcceptance extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
-            "Counselling",
+            "SelfAcceptance",
             1,
             CardType.SKILL,
             CardTarget.SELF,
@@ -24,7 +24,7 @@ public class Counselling extends BaseCard {
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
-    public Counselling() {
+    public SelfAcceptance() {
         super(cardInfo);
 
         setMagic(MAGIC, UPG_MAGIC);
@@ -38,6 +38,6 @@ public class Counselling extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Counselling();
+        return new SelfAcceptance();
     }
 }

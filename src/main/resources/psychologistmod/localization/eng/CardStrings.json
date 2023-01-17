@@ -54,11 +54,6 @@
     "DESCRIPTION": "Deal !D! damage for each ${modID}:Doctrine you have."
   },
 
-  "${modID}:Counselling": {
-    "NAME": "Counselling",
-    "DESCRIPTION": "{@@}Gain a ${modID}:Therapeutic ${modID}:Doctrine. NL Draw !M! card{!M!|>1=s}."
-  },
-
   "${modID}:Critique": {
     "NAME": "Critique",
     "DESCRIPTION": "Apply 1 Weak and !M! ${modID}:Feedback."
@@ -158,12 +153,17 @@
 
   "${modID}:RetailTherapy": {
     "NAME": "Retail Therapy",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Spending gold at a shop increases the damage of this card by 1."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Spending gold at a shop increases the damage of this NL card by 1."
   },
 
   "${modID}:RoughDraft": {
     "NAME": "Rough Draft",
     "DESCRIPTION": "{@@}Gain !B! Block. Draw !M! additional card{!M!|>1=s} next turn."
+  },
+
+  "${modID}:SelfAcceptance": {
+    "NAME": "Self Acceptance",
+    "DESCRIPTION": "{@@}Gain a ${modID}:Therapeutic ${modID}:Doctrine. NL Draw !M! card{!M!|>1=s}."
   },
 
   "${modID}:SelfCare": {
