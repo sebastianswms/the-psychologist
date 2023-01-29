@@ -15,6 +15,11 @@
     "DESCRIPTION": "Deal !D! damage. Gain a ${modID}:Practical ${modID}:Doctrine."
   },
 
+  "${modID}:AttachmentTheory": {
+    "NAME": "Attachment Theory",
+    "DESCRIPTION": "Whenever your Block is broken, the enemy takes !M! damage."
+  },
+
   "${modID}:Browbeat": {
     "NAME": "Browbeat",
     "DESCRIPTION": "Deal damage equal to the number of cards in your hand.",

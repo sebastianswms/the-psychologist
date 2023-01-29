@@ -1,4 +1,12 @@
 {
+  "${modID}:Attachment": {
+    "NAME": "Attachment",
+    "DESCRIPTIONS": [
+      "When your Block is broken, deal #b",
+      " damage to this enemy."
+    ]
+  },
+
   "${modID}:Feedback": {
     "NAME": "Feedback",
     "DESCRIPTIONS": [
