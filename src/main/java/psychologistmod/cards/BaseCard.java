@@ -176,7 +176,7 @@ public abstract class BaseCard extends CustomCard {
         this.selfRetain = baseRetain;
     }
 
-    protected void upgTargetAll(boolean targetAll){ // My additions.
+    protected void upgTargetAll(){ // My additions.
         this.upgTargetAll = true;
     }
 

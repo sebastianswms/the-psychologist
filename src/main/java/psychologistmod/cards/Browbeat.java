@@ -23,16 +23,14 @@ public class Browbeat extends BaseCard {
             ThePsychologist.Enums.CARD_COLOR);
     public static final String ID = makeID(cardInfo.baseId);
 
-    private static final int DAMAGE = 0;
-
     public Browbeat() {
         super(cardInfo);
-        setDamage(DAMAGE);
-        upgTargetAll(true);
+        setDamage(0);
+        upgTargetAll();
     }
 
     public void applyPowers() {
-        this.baseDamage = AbstractDungeon.player.hand.size();
+        this.baseDamage = AbstractDungeon.player.hand.size() - 1;
         super.applyPowers();
         if(!this.upgraded) {
             this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];

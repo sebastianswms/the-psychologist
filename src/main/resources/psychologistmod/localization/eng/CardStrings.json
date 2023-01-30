@@ -76,7 +76,7 @@
 
   "${modID}:FieldResearch": {
     "NAME": "Field Research",
-    "DESCRIPTION": "{@@}Deal !D! damage twice. Shuffle !M! Insight card{!M!|>1=s} into your draw pile."
+    "DESCRIPTION": "{@@}Deal !D! damage twice. Shuffle !M! Insight into your draw pile."
   },
 
   "${modID}:Gaslighting": {
@@ -113,6 +113,12 @@
   "${modID}:Medication": {
     "NAME": "Medication",
     "DESCRIPTION": "Gain !B! Block. Increase this card's cost by !M! this combat."
+  },
+
+  "${modID}:MindMap": {
+    "NAME": "Mind Map",
+    "DESCRIPTION": "Exhaust your hand and gain that many Insight.",
+    "EXTENDED_DESCRIPTION": ["{@@} NL (Gains !M! Insight.)"]
   },
 
   "${modID}:NegativeReinforcement": {
@@ -188,7 +194,7 @@
 
   "${modID}:SocialExperiment": {
     "NAME": "Social Experiment",
-    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies. Add !M! Insight card{!M!|>1=s} to your discard pile."
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies. Add !M! Insight to your discard pile."
   },
 
   "${modID}:Stick": {
@@ -202,7 +208,7 @@
   },
 
   "${modID}:StrongStimulus": {
-    "NAME": "Strong Strimulus",
+    "NAME": "Strong Stimulus",
     "DESCRIPTION": "Add !M! Conditioning to your hand."
   }
 }
