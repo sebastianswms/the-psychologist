@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import psychologistmod.characters.ThePsychologist;
 import psychologistmod.interfaces.PsychologistOnObtainCard;
+import psychologistmod.patches.PsychologistModTagsPatch;
 import psychologistmod.util.CardInfo;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class SelfImprovement extends BaseCard implements PsychologistOnObtainCar
     public SelfImprovement() {
         super(cardInfo);
         setMagic(MAGIC, UPG_MAGIC);
+        tags.add(PsychologistModTagsPatch.ACTUALIZATION);
     }
 
     @Override

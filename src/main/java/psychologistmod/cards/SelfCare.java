@@ -2,11 +2,11 @@ package psychologistmod.cards;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import psychologistmod.characters.ThePsychologist;
+import psychologistmod.patches.PsychologistModTagsPatch;
 import psychologistmod.util.CardInfo;
 
 import static psychologistmod.ThePsychologistMod.makeID;
@@ -28,6 +28,7 @@ public class SelfCare extends BaseCard {
     public SelfCare() {
         super(cardInfo);
         setMagic(MAGIC,UPG_MAGIC);
+        tags.add(PsychologistModTagsPatch.ACTUALIZATION);
     }
 
     @Override

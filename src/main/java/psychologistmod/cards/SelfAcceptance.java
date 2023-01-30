@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import psychologistmod.actions.PsychologistChannelAction;
 import psychologistmod.characters.ThePsychologist;
 import psychologistmod.orbs.Therapeutic;
+import psychologistmod.patches.PsychologistModTagsPatch;
 import psychologistmod.util.CardInfo;
 
 import static psychologistmod.ThePsychologistMod.makeID;
@@ -26,8 +27,8 @@ public class SelfAcceptance extends BaseCard {
 
     public SelfAcceptance() {
         super(cardInfo);
-
         setMagic(MAGIC, UPG_MAGIC);
+        tags.add(PsychologistModTagsPatch.ACTUALIZATION);
     }
 
     @Override

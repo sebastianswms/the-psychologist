@@ -2,12 +2,12 @@ package psychologistmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import psychologistmod.characters.ThePsychologist;
+import psychologistmod.patches.PsychologistModTagsPatch;
 import psychologistmod.util.CardInfo;
 
 import static psychologistmod.ThePsychologistMod.makeID;
@@ -31,6 +31,7 @@ public class SelfRestraint extends BaseCard {
         super(cardInfo);
         setDamage(DAMAGE);
         setMagic(MAGIC, UPG_MAGIC);
+        tags.add(PsychologistModTagsPatch.ACTUALIZATION);
     }
 
     @Override
